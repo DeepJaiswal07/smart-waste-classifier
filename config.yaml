@@ -1,0 +1,55 @@
+project:
+  name: "smart-waste-classifier"
+  title: "Smart Waste Image Classification System Using Transfer Learning"
+  version: "1.0.0"
+  seed: 42
+
+data:
+  dataset_name: "TrashNet"
+  dataset_url: "https://raw.githubusercontent.com/garythung/trashnet/master/data/dataset-resized.zip"
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  split_file: "data/dataset_split.json"
+  image_size: 224
+  train_split: 0.70
+  val_split: 0.15
+  test_split: 0.15
+  num_classes: 6
+  classes:
+    - "cardboard"
+    - "glass"
+    - "metal"
+    - "paper"
+    - "plastic"
+    - "trash"
+
+model:
+  architecture: "mobilenet_v3_small"
+  pretrained: true
+  freeze_backbone: true
+  dropout: 0.2
+  fine_tune: false
+  fine_tune_layers: 2
+
+training:
+  epochs: 5
+  batch_size: 32
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  patience: 3
+  num_workers: 0
+  quick_epochs: 2
+  quick_batch_size: 16
+  quick_sample_limit: 120
+
+paths:
+  model_dir: "models"
+  output_dir: "outputs"
+  best_model_path: "models/best_model.pth"
+  classes_path: "models/class_names.json"
+  metadata_path: "models/model_metadata.json"
+  history_csv: "outputs/training_history.csv"
+  curves_plot: "outputs/training_curves.png"
+  metrics_json: "outputs/metrics.json"
+  report_txt: "outputs/classification_report.txt"
+  confusion_matrix_png: "outputs/confusion_matrix.png"

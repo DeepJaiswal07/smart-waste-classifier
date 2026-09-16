@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smart-waste-classifier"
+version = "1.0.0"
+description = "Smart Waste Image Classification System Using Transfer Learning"
+readme = "README.md"
+authors = [{ name = "Academic Computer Vision Team" }]
+license = { text = "MIT" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Image Recognition"
+]
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.0.0",
+    "torchvision>=0.15.0",
+    "pillow>=9.5.0",
+    "numpy>=1.24.0",
+    "pandas>=2.0.0",
+    "scikit-learn>=1.2.0",
+    "matplotlib>=3.7.0",
+    "pyyaml>=6.0.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0"
+]
+
+[project.scripts]
+smart-waste = "src.main:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
