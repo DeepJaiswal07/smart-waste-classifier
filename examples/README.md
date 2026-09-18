@@ -5,7 +5,7 @@ This directory contains reference images and instructions for testing model infe
 ## Providing Test Images
 
 You can place test waste images in this directory to evaluate model predictions using the CLI:
-
+ 
 ```bash
 python -m src.main predict --image examples/sample_cardboard.jpg --top-k 3
 ```
