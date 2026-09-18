@@ -4,7 +4,7 @@ project:
   version: "1.0.0"
   seed: 42
 
-data:
+data: 
   dataset_name: "TrashNet"
   dataset_url: "https://raw.githubusercontent.com/garythung/trashnet/master/data/dataset-resized.zip"
   raw_dir: "data/raw"
