@@ -3,7 +3,7 @@
 ## 1. Problem Statement
 Municipal solid waste management is an urgent global ecological challenge. Inefficient waste segregation at the source leads to high rates of landfill disposal, severe environmental pollution, and the loss of recyclable commodities. Manual sorting in recycling facilities is labour-intensive, hazardous, economically inefficient, and prone to human error. Developing an automated, robust, and lightweight Computer Vision system capable of classifying waste objects into recyclable and non-recyclable streams (cardboard, glass, metal, paper, plastic, and general trash) directly addresses this critical gap.
 
-## 2. Scope of the Project
+## 2. Scope of the Project 
 The scope of this project encompasses:
 - Building an end-to-end, modular Computer Vision pipeline using PyTorch and Torchvision.
 - Utilizing Transfer Learning with an ImageNet-pretrained `MobileNetV3-Small` convolutional neural network backbone to achieve high classification accuracy with low computational latency on commodity CPU hardware.
