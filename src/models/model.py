@@ -5,7 +5,7 @@ from typing import Any, Dict, Optional, Tuple
 import torch
 import torch.nn as nn
 from torchvision.models import (
-    mobilenet_v3_small,
+    mobilenet_v3_small, 
     MobileNet_V3_Small_Weights,
 )
 
