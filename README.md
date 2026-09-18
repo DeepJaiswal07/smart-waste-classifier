@@ -344,9 +344,9 @@ The system enforces pseudo-random seed `42` across Python `random`, `numpy.rando
 
 ---
 
-## 16. References
-1. Howard, A., Sandler, M., Chu, G., Chen, L. C., Chen, B., Tan, M., Wang, W., Zhu, Y., Pang, R., Vasudevan, V., Le, Q. V., & Adam, H. (2019). Searching for MobileNetV3. *Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)*, 1314–1324.
-2. Thung, G., & Yang, M. (2016). Classification of Trash for Recyclability Status. *CS229 Project Report*, Stanford University.
-3. Deng, J., Dong, W., Socher, R., Li, L. J., Li, K., & Fei-Fei, L. (2009). ImageNet: A large-scale hierarchical image database. *IEEE Conference on Computer Vision and Pattern Recognition (CVPR)*, 248–255.
-4. Paszke, A., et al. (2019). PyTorch: An Imperative Style, High-Performance Deep Learning Library. *Advances in Neural Information Processing Systems (NeurIPS)*, 32, 8024–8035.
-5. Pedregosa, F., et al. (2011). Scikit-learn: Machine Learning in Python. *Journal of Machine Learning Research (JMLR)*, 12, 2825–2830.
+## 16. Author
+
+Deep Jaiswal\
+Roll No: 24BAI10750\
+Course: Programming In Java\
+Institution: VIT Bhopal University
