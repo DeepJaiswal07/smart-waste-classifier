@@ -11,6 +11,6 @@ scikit-learn>=1.2.0
 # Visualization & Metrics
 matplotlib>=3.7.0
 
-# Configuration & Testing
+# Configuration & Testing 
 pyyaml>=6.0.0
 pytest>=7.0.0
