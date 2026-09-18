@@ -1,27 +1,23 @@
 # Smart Waste Image Classification System Using Transfer Learning
 
-[![Python Version](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue)](https://www.python.org/)
-[![Framework](https://img.shields.io/badge/PyTorch-2.8.0%2Bcpu-red)](https://pytorch.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Tests](https://img.shields.io/badge/pytest-15%20passed-brightgreen)](tests/)
 
 An end-to-end, reproducible, command-line-driven Computer Vision system for classifying solid waste images into six categories (`cardboard`, `glass`, `metal`, `paper`, `plastic`, and `trash`) using Transfer Learning with a pretrained `MobileNetV3-Small` deep neural network backbone.
 
 ---
 
-## 1. Overview
+## Overview
 Municipal solid waste management has become an urgent planetary challenge. Inefficient segregation at the source contaminates recyclable streams and overwhelms municipal landfills. This project implements an automated, lightweight, and robust Computer Vision classification system designed for real-time sorting and edge execution.
 
 By leveraging transfer learning on an ImageNet-pretrained `MobileNetV3-Small` convolutional network, the system extracts rich high-level geometric, spectral, and textural representations from waste images with fewer than 1.1 million parameters, enabling high-speed CPU execution without requiring expensive GPU clusters.
 
 ---
 
-## 2. Problem Statement
+## Problem Statement
 Manual sorting of post-consumer waste in recovery facilities is labor-intensive, hazardous, economically unsustainable, and prone to human inconsistency. Automated optical sorting can rapidly categorize recyclables into distinct processing streams. However, training computer vision models from scratch requires tens of thousands of labelled samples and extensive compute power. This system solves this constraint by employing **Transfer Learning**, adapting general visual feature representations learned on ImageNet to specialized waste categories with minimal compute overhead.
 
 ---
 
-## 3. Objectives
+## Objectives
 1. **Automated Data Pipeline**: Download, verify image integrity, filter corrupted items, and perform deterministic stratified splitting (70% train, 15% validation, 15% test).
 2. **Robust Augmentation & Preprocessing**: Prevent overfitting through controlled spatial perturbations while ensuring zero data leakage into validation or test sets.
 3. **Transfer Learning Architecture**: Adapt `MobileNetV3-Small` with a custom classification head designed for multi-class waste discrimination.
@@ -31,7 +27,7 @@ Manual sorting of post-consumer waste in recovery facilities is labor-intensive,
 
 ---
 
-## 4. Key Features
+## Key Features
 - **Deterministic Reproducibility**: Fixed pseudo-random seed (`seed = 42`) across Python, NumPy, and PyTorch.
 - **Hardware Agnostic**: Automatic device selection defaulting to CPU when CUDA is unavailable.
 - **Memory Efficient**: On-demand lazy image loading via custom PyTorch `Dataset` without loading entire datasets into RAM.
@@ -42,7 +38,7 @@ Manual sorting of post-consumer waste in recovery facilities is labor-intensive,
 
 ---
 
-## 5. Computer Vision Pipeline
+## Computer Vision Pipeline
 
 ```
                        [ Input Waste Image ]
@@ -84,7 +80,7 @@ Manual sorting of post-consumer waste in recovery facilities is labor-intensive,
 
 ---
 
-## 6. Dataset Description
+## Dataset Description
 
 The system utilizes the benchmark **TrashNet** dataset collected by Gary Thung and Mindy Yang (Stanford University CS229).
 
@@ -103,7 +99,7 @@ The system utilizes the benchmark **TrashNet** dataset collected by Gary Thung a
 
 ---
 
-## 7. Model Architecture & Transfer Learning
+## Model Architecture & Transfer Learning
 
 `MobileNetV3-Small` was selected as the optimal architecture for this domain:
 - **Efficiency**: Only 1,076,262 total parameters, requiring ~10 MB disk space.
@@ -117,7 +113,7 @@ The system utilizes the benchmark **TrashNet** dataset collected by Gary Thung a
 
 ---
 
-## 8. Technology Stack
+## Technology Stack
 - **Programming Language**: Python 3.10+ (tested on Python 3.12.6)
 - **Deep Learning Framework**: PyTorch 2.8.0+cpu & Torchvision 0.23.0+cpu
 - **Computer Vision & Image I/O**: Pillow (PIL) 11.3.0
@@ -129,7 +125,7 @@ The system utilizes the benchmark **TrashNet** dataset collected by Gary Thung a
 
 ---
 
-## 9. Installation & Setup
+## Installation & Setup
 
 ### Clone Repository
 ```bash
@@ -148,7 +144,7 @@ pip install -e .
 
 ---
 
-## 10. Execution Guide
+## Execution Guide
 
 The system provides a unified terminal interface through `python -m src.main`:
 
@@ -216,7 +212,7 @@ python scripts/check_project.py
 
 ---
 
-## 11. Actual Experimental Results
+## Actual Experimental Results
 
 The following metrics represent actual empirical values measured on the held-out test set (379 samples) following 5 epochs of training on CPU hardware:
 
@@ -243,7 +239,7 @@ The following metrics represent actual empirical values measured on the held-out
 
 ---
 
-## 12. Generated Artifacts & Outputs
+## Generated Artifacts & Outputs
 
 All execution outputs are saved under `outputs/` and `models/`:
 - `models/best_model.pth`: PyTorch binary state dictionary of the optimal model checkpoint.
@@ -325,7 +321,7 @@ smart-waste-classifier/
 
 ---
 
-## 14. Reproducibility & Limitations
+## Reproducibility & Limitations
 
 ### Deterministic Seeding
 The system enforces pseudo-random seed `42` across Python `random`, `numpy.random`, and `torch.manual_seed()`. Minor floating-point divergence can occur across differing CPU instruction sets (e.g. AVX2 vs AVX-512) or CUDA backends.
@@ -337,14 +333,14 @@ The system enforces pseudo-random seed `42` across Python `random`, `numpy.rando
 
 ---
 
-## 15. Future Enhancements
+## Future Enhancements
 - **Multi-Object Detection**: Integrating a lightweight detector such as YOLOv8-Nano to localize and classify multiple waste objects in a conveyor stream.
 - **Class Balancing Strategies**: Employing Focal Loss or weighted random sampling to boost minority class recall.
 - **Edge Deployment**: Exporting the trained PyTorch model to ONNX runtime or TensorRT for low-power embedded deployment on Raspberry Pi 5 or NVIDIA Jetson Nano.
 
 ---
 
-## 16. Author
+## Author
 
 Deep Jaiswal\
 Roll No: 24BAI10750\
