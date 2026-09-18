@@ -55,7 +55,7 @@ data/*
 # Trained models and checkpoints (Keep placeholder)
 models/*
 !models/.gitkeep
-!models/README.md
+!models/README.md 
 
 # Generated outputs (Keep placeholder)
 outputs/*
