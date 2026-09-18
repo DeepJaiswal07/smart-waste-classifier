@@ -7,7 +7,7 @@ from pathlib import Path
 from src.data.dataset import prepare_dataset
 from src.data.preprocessing import get_transforms
 from src.evaluation.evaluator import evaluate_model
-from src.inference.predictor import Predictor
+from src.inference.predictor import Predictor 
 from src.models.model import build_model, get_device
 from src.training.trainer import train_model
 from src.utils.config import load_config
